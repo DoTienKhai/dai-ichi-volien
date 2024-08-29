@@ -1,0 +1,532 @@
+<div class="home" id="home">
+  <div class="icon-group">
+    <div class="icon-custom">
+      <a href="tel:0973903463">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none"
+             viewBox="0 0 32 32"
+             class="" fill="#000">
+          <image href="https://w.ladicdn.com/ladiui/icons/social/phone-call.svg" height="32" width="32"></image>
+        </svg>
+      </a>
+    </div>
+    <div class="icon-custom">
+      <a href="https://zalo.me/0973903463">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none"
+             viewBox="0 0 32 32"
+             class="" fill="#000">
+          <image href="https://w.ladicdn.com/ladiui/icons/social/zalo.svg" height="32" width="32"></image>
+        </svg>
+      </a>
+    </div>
+    <div class="icon-custom">
+      <a href="https://m.me/100009359682242">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none"
+             viewBox="0 0 32 32"
+             class="" fill="#000">
+          <image href="https://w.ladicdn.com/ladiui/icons/social/messenger.svg" height="32" width="32"></image>
+        </svg>
+      </a>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <header class="row d-flex align-items-center p-md-4 p-lg-4">
+      <label for="" class="col-2 d-sm-block d-md-none d-lg-none pt-2 open-menu-mobile">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+             class="size-6" (click)="addClass()">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM3.75 12h.007v.008H3.75V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm-.375 5.25h.007v.008H3.75v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"/>
+        </svg>
+      </label>
+      <div class="col-sm-10 col-10 col-md-4 col-lg-6 custom-img">
+        <div class="img-header"></div>
+      </div>
+      <div class="col-md-7 col-8 col-lg-5 d-none d-md-block d-lg-block">
+        <div class="category">
+          <ul class="d-flex list-unstyled justify-content-between align-items-center mb-0 h-100">
+            @for (item of lsCategories; track item.href) {
+              <li class="fw-bold" (click)="scrollTo(item.href)">
+                {{ item.name }}
+              </li>
+            }
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="overlay-menu"></div>
+    <div class="menu-mobile">
+      <div class="d-flex align-items-center justify-content-end custom-close w-100">
+        <label for="">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" (click)="removeClass()">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22ZM8.96965 8.96967C9.26254 8.67678 9.73742 8.67678 10.0303 8.96967L12 10.9394L13.9696 8.96969C14.2625 8.6768 14.7374 8.6768 15.0303 8.96969C15.3232 9.26258 15.3232 9.73746 15.0303 10.0303L13.0606 12L15.0303 13.9697C15.3232 14.2625 15.3232 14.7374 15.0303 15.0303C14.7374 15.3232 14.2625 15.3232 13.9696 15.0303L12 13.0607L10.0303 15.0303C9.73744 15.3232 9.26256 15.3232 8.96967 15.0303C8.67678 14.7374 8.67678 14.2626 8.96967 13.9697L10.9393 12L8.96965 10.0303C8.67676 9.73744 8.67676 9.26256 8.96965 8.96967Z"
+                    fill></path>
+            </g>
+          </svg>
+        </label>
+      </div>
+      <ul class="menu">
+        @for (item of lsCategories; track item.href) {
+          <li (click)="scrollTo(item.href)">
+            {{ item.name }}
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+  <main>
+    <article class="container-fluid">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                  aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                  aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                  aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                  aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+                  aria-label="Slide 5"></button>
+        </div>
+        <div class="carousel-inner">
+          @for (item of lsImagesCarousel; track item.url) {
+            <div class="carousel-item" [class.active]="item.url === lsImagesCarousel[0].url" data-bs-interval="3000">
+              <img src="{{ item.url }}" class="d-block w-100 h-100" [alt]="item.alt">
+            </div>
+          }
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </article>
+    <article class="container-fluid">
+      <div class="bg-info text-center p-4">
+        <h2 class="text-uppercase text-danger fw-bold">giới thiệu bản thân võ liên dai-ichi</h2>
+        <hr class="text-danger fw-bold">
+        <div class="row">
+          @for (item of lsExperience; track item.name) {
+            <div class="col-12 col-sm-4 col-md-4 col-lg-4">
+              <h2 class="text-center fw-bold text-danger text-uppercase">{{ item.name }}</h2>
+              <p class="text-center fw-bold fs-4" [ngClass]="{'mb-0': item.value2}"
+                 style="line-height: 2rem">{{ item.value }}</p>
+              @if (item.value2) {
+                <p class="text-center fw-bold fs-4">{{ item.value2 }}</p>
+              }
+            </div>
+          }
+        </div>
+      </div>
+
+    </article>
+    <article class="container-fluid">
+      <div class="reason row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 left">
+          <div class="line"></div>
+          <h4 class="text-center fw-bold text-danger text-uppercase mt-2">{{ reasonTitle }}</h4>
+          <div class="line"></div>
+          <p class="mb-0 text-start">
+            {{ reasonParagraph }}
+          </p>
+          @for (item of lsReasonParagraph; track item.title) {
+            <p class="mb-0 text-start mt-2">{{ item.title }}</p>
+            <hr class="m-2">
+          }
+        </div>
+        <div class="row col-12 col-md-12 col-lg-6 right mt-4">
+          @for (item of lsImages; track item.url) {
+            <div class="col-6 gap-2 text-center">
+              <img [src]="item.url" [attr.alt]="item.content">
+              <p class="text-uppercase fw-bold mt-2">{{ item.content }}</p>
+            </div>
+          }
+        </div>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-6 d-flex align-items-center justify-content-center">
+          <button class="btn btn-warning text-uppercase fw-bold gradient-button" (click)="scrollTo('register-form')">tư vấn ngay</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="container-fluid" id="product">
+      <div class="package row row-gap-2">
+        <div class="col-12 left">
+          <div class="line d-block d-sm-none d-md-none d-lg-none"></div>
+          <h2 class="text-center fw-bold text-danger text-uppercase mt-2">{{ followPacks }}</h2>
+          <div class="line d-block d-sm-none d-md-none d-lg-none"></div>
+        </div>
+        @for (item of lsFollowPacks; track item.id) {
+          <div class="col-6 col-sm-6 col-md-6 col-lg-3 package-item">
+            <div class="package-box w-100 mh-100 mw-100 h-100 border rounded-bottom-5 d-flex flex-column">
+              <img [src]="item.url" [alt]="item.content" class="mw-100 h-auto">
+              <div class="content ps-2 pe-2 pb-2 d-flex flex-column flex-shrink-1 flex-grow-1">
+                <p class="text-uppercase text-center text-danger fw-bold mt-2">{{ item.title }}</p>
+                <p>{{ item.content }}</p>
+                <div class="d-flex align-items-center justify-content-center mt-auto">
+                  <button class="btn btn-primary gradient-button text-uppercase custom-btn"
+                          (click)="openDialog(item)">chi tiết gói
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </article>
+
+    <article>
+      <div class="feedback container-fluid" id="feedback">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="text-center fw-bold text-danger text-uppercase mt-2 mb-0">{{ feedback }}</h2>
+            <div class="line d-block d-sm-none d-md-none d-lg-none bg-danger"></div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-12 col-md-6 col-lg-3 mt-4 position-relative">
+            <iframe
+              class="feedback-media"
+              src="https://www.facebook.com/plugins/video.php?height=476&amp;href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1668170833970469%2F&amp;show_text=false&amp;width=267&amp;t=0&amp;autoplay=1"
+              width="267" height="476"
+              style="border:none;overflow:hidden;object-fit:cover;width:100%;height:100%;"
+              scrolling="no" frameborder="0" allowfullscreen="allowfullscreen"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+          </div>
+          @for (item of lsFeedbacks; track item.url) {
+            <div class="col-6 col-md-6 col-lg-3 mt-4 d-block"
+                 [ngClass]="{'d-md-none': item.lock, 'd-lg-none': item.lock}">
+              <div>
+                <img [src]="item.url" [alt]="'sas'" class="mw-100 h-auto">
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </article>
+    <article class="container-fluid">
+      <div class="signature row">
+        <div class="col-12 left">
+          <h2 class="text-center fw-bold text-danger text-uppercase mt-2">{{ signature }}</h2>
+          <div class="line d-block d-sm-none d-md-none d-lg-none bg-danger"></div>
+        </div>
+        <div class="row col-12 mt-4 row-gap-4 p-0 ps-4">
+          @for (item of lsSignature; track item.url) {
+            <div class="col-6 col-sm-4 col-md-4 col-lg-4">
+              <img [src]="item.url" [alt]="item.url" class="mw-100 h-auto">
+            </div>
+          }
+        </div>
+        <div class="col-12 row p-4">
+          <!--          <div class="col-4">-->
+          <img src="./assets/img/img_24.png" [alt]="'volien-daiichi'" class="mw-100 h-auto">
+          <!--          </div>-->
+        </div>
+      </div>
+    </article>
+    <article class="container-fluid">
+      <div class="player row">
+        <div class="col-12 mb-2">
+          <h2 class="text-center fw-bold text-danger text-uppercase mb-0">{{ player }}</h2>
+          <div class="line d-block d-sm-none d-md-none d-lg-none bg-danger"></div>
+        </div>
+        <div class="col-12 d-flex justify-content-center bg-player">
+          <div class="w-75">
+            <img src="./assets/img/img_25.png" [alt]="'volien-daiichi'" class="mw-100 h-auto">
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="container-fluid">
+      <div class="choose-me row">
+        <div class="col-12">
+          <h2 class="text-center fw-bold text-dark text-uppercase">{{ chosseMe }} <span class="text-danger">Võ Liên Dai-ichi</span>
+          </h2>
+          <div class="line d-block d-sm-none d-md-none d-lg-none bg-danger"></div>
+        </div>
+        <div class="col-11 ps-2 pe-2">
+          <ul>
+            @for (item of lsChosseMe; track item.title) {
+              <li class="fw-bold fs-6 mb-2">{{ item.title }}</li>
+            }
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <article class="container-fluid">
+      <div class="news row">
+        <div class="col-12">
+          <div class="line d-block d-sm-none d-md-none d-lg-none bg-danger"></div>
+          <h2 class="text-center fw-bold text-dark text-uppercase mb-0">{{ news }} </h2>
+          <div class="line d-block d-sm-none d-md-none d-lg-none bg-danger"></div>
+        </div>
+        <div class="col-12 mt-4">
+          <div class="text-center row row-gap-2">
+            @for (item of lsNews; track item.id) {
+              <div class="col-6 col-sm-6 col-md-6 col-lg-3 package-item">
+                <div class="package-box w-100 mh-100 mw-100 h-100 border rounded-bottom-5 d-flex flex-column"
+                     (click)="navigateBy(item.route)">
+                  <img [src]="item.url" [alt]="item.content" class="mw-100 h-auto">
+                  <div class="content ps-2 pe-2 pb-2 d-flex flex-column flex-shrink-1 flex-grow-1">
+                    <p class="text-uppercase text-center text-danger fw-bold mt-2">{{ item.title }}</p>
+                    <p>{{ item.content }}</p>
+                  </div>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="container-fluid">
+      <div class="customers row">
+        <div class="col-12">
+          <div class="line d-block d-sm-none d-md-none d-lg-none bg-danger"></div>
+          <h2 class="text-center fw-bold text-dark text-uppercase mb-0">{{ customer }} </h2>
+          <div class="line d-block d-sm-none d-md-none d-lg-none bg-danger"></div>
+        </div>
+        <div class="col-12 mt-4">
+          <div class="marquee">
+            <div class="marquee-content">
+              <ul class="d-flex list-unstyled gap-4">
+                @for (item of lsCustomer; track item.url) {
+                  <li class="marquee-item"><img [src]="item.url" [alt]="item.url" class="marquee-image"></li>
+                }
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article>
+      <div class="container-fluid">
+        <div class="sale row">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+            <div class="form-container w-100" id="register-form">
+              <h3 class="form-title">Đăng Ký Tư Vấn Miễn Phí</h3>
+              <form [formGroup]="reactiveForm" novalidate>
+                <div class="form-group">
+                  <label for="fullName">Họ và tên (<span class="text-danger">*</span>)</label>
+                  <input type="text" id="fullName" name="fullName" placeholder="Nhập họ và tên" required
+                         formControlName="name">
+                  @if (name.invalid && (name.dirty || name.touched)) {
+                    @if (name.errors?.['required']) {
+                      <span class="text-danger text-center fw-bold">Nhập họ và tên</span>
+                    }
+                  }
+                </div>
+                <div class="form-group">
+                  <label for="phone">Số điện thoại (<span class="text-danger">*</span>)</label>
+                  <input type="text" id="phone" name="phone" placeholder="Nhập số điện thoại" required
+                         formControlName="phone">
+                  @if (phone.invalid && (phone.dirty || phone.touched)) {
+                    @if (phone.errors?.['required']) {
+                      <span class="text-danger text-center fw-bold">Nhập số điện thoại</span>
+                    }
+                  }
+                  @if (phone.errors?.['pattern']) {
+                    <span class="text-danger text-center fw-bold">Số điện thoại không đúng định dạng</span>
+                  }
+                </div>
+                <div class="form-group">
+                  <label for="address">Địa chỉ</label>
+                  <input type="text" id="address" name="address" placeholder="Nhập địa chỉ" formControlName="address">
+                </div>
+                <div class="form-buttons">
+                  <button type="submit" class="submit" (click)="sendInfo()">Gửi</button>
+                  <button type="reset" class="reset" (click)="reactiveForm.reset()">Nhập lại</button>
+                </div>
+              </form>
+            </div>
+            <!--            <iframe class="w-100"-->
+            <!--                    src="https://docs.google.com/forms/d/e/1FAIpQLScWmnZ0txvbRG-H0opxJgTBfcVk1a8-85qMyXR5gS-QNMJpqw/viewform?embedded=true"-->
+            <!--                    width="640" height="830" frameborder="0" marginheight="0" marginwidth="0">Đang tải…-->
+            <!--            </iframe>-->
+          </div>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-6 mt-4 mt-lg-0">
+            <div class="content-wrap position-relative overflow-hidden p-4 h-100 discount d-flex">
+              <div class="overlay position-absolute"></div>
+              <div class="row z-2 text-white position-relative">
+                @for (item of lsInfor; track item.paragraph) {
+                  <div class="col-12 col-sm-6 col-md-6 col-lg-6 text-white fs-6 paragraph position-relative">
+                    <p>{{ item.paragraph }}</p>
+                  </div>
+                }
+                <h1 class="voucher text-white text-center">TẶNG NGAY VOUCHER 20% KHI ĐĂNG KÝ NGAY HÔM NAY</h1>
+                <app-countdown></app-countdown>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+  <footer class="footer position-relative" id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-6">
+          @for (item of lsAddress; track item.icon) {
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <div class="custom-svg">
+                <span [innerHTML]="item.icon"></span>
+              </div>
+              <p class="mb-0 ms-2 fs-6" [innerHTML]="item.title"></p>
+            </div>
+          }
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="custom-img-fb m-auto">
+            <img src="./assets/img/dilien.jpg" class="w-100 h-auto" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-100 text-center text-dark mt-4">©2024 Allrights reserved Volien daiichi</div>
+  </footer>
+</div>
+
+<ng-template #dialogTempDoclapchocon let-data>
+  <div class="content bg-custom ps-4 pe-2">
+    <h2 class="text-danger text-center text-uppercase">gói bảo hiểm độc lập cho con</h2>
+    <h3 class="text-danger mb-0">❤ SẢN PHẨM AN TÂM SONG HÀNH.</h3>
+    <ul class="mb-0">
+      <li>Tham gia độc lập cho con.</li>
+      <li>Phí: 16 triệu/ năm.</li>
+    </ul>
+    <h3 class="text-danger mb-0">✔ Nhân thọ bảo vệ sinh mệnh cho con: STBH 1 Tỷ 2</h3>
+    <ul class="mb-0">
+      <li>Bảo vệ trong trường hợp tử vong, thương tật TBVV hoặc mất 2/6 bộ phận trên cơ thể.</li>
+    </ul>
+    <h3 class="text-danger mb-0">✔ Thẻ CSSK Nội trú cao cấp: </h3>
+    <ul class="mb-0">
+      <li>BẢO VỆ <span class="fw-bold">1tỷ/1 bệnh/1 thương tật.</span></li>
+      <li>Giường và Ăn Uống: <span class="fw-bold">3tr/ngày ( dùng Phòng Vip nhé các Mẹ&Ba)</span></li>
+      <li>Giường cho Cha Mẹ chăm sóc con: <span class="fw-bold">1tr/ngày.</span></li>
+      <li>Chi phí thăm khám, thuốc men: <span class="fw-bold">60tr/1 năm/1 bệnh/1 thương tật.</span></li>
+      <li>CP phẫu thuật <span class="fw-bold">75tr/1 ca.</span></li>
+      <li>Điều trị UT ( hóa trị, xạ trị): <span class="fw-bold">100% chi phí thực tế.</span></li>
+      <li>Biến chứng thai sản: <span class="fw-bold">35tr/1 biến chứng.</span></li>
+      <li>Điều trị răng do tai nạn: <span class="fw-bold">7,5tr/1 năm.</span></li>
+      <li class="fw-bold">Bảo vệ các bệnh xương khớp, thoái hóa.</li>
+    </ul>
+    <h3 class="text-danger mb-0">✔ Thẻ CSSK ngoại trú phổ thông: </h3>
+    <ul class="mb-0">
+      <li>Qũy khám: <span class="fw-bold">5tr/1 năm.</span></li>
+      <li>Thanh toán tối thiểu 210k, tối đa <span class="fw-bold">1tr/1 lần khám.</span></li>
+    </ul>
+    <h3 class="text-danger mb-0">✔ Bảo vệ bệnh hiểm nghèo: 100tr ( Nhận tiền mặt mang về) </h3>
+    <p class="mb-0">👉 Đóng phí 15 năm và <span class="fw-bold">bảo vệ 25 năm.</span></p>
+    <p>👉 Qũy học đường cho con sau <span class="fw-bold">15 năm: 300 triệu.</span></p>
+  </div>
+</ng-template>
+
+<ng-template #dialogTempChomevacon let-data>
+  <div class="content bg-custom ps-4 pe-2">
+    <h2 class="text-danger text-center text-uppercase">gói bh cho 2 mẹ con (2 bố con)</h2>
+    <h3 class="text-danger mb-0">❤ SẢN PHẨM AN TÂM SONG HÀNH.</h3>
+    <ul class="mb-0">
+      <li>Tham gia cho 2 mẹ con, hoặc 2 bố con.</li>
+      <li>Phí: <span class="fw-bold">22 triệu/ năm.</span></li>
+    </ul>
+    <h3 class="text-danger mb-0">✔ Nhân thọ bảo vệ sinh mệnh cho bố/mẹ người trụ cột trong gia đình: từ 800tr – 1tỷ</h3>
+    <ul class="mb-0">
+      <li>Bảo vệ trong trường hợp tử vong, thương tật TBVV hoặc mất 2/6 bộ phận trên cơ thể.</li>
+    </ul>
+    <h3 class="text-danger mb-0">✔ Bảo hiểm bệnh hiểm nghèo cho bố hoặc mẹ, người trụ cột gia đình: 300tr</h3>
+    <ul class="mb-0">
+      <li>Bảo vệ 88 bệnh hiểm nghèo</li>
+      <li>Tổng quyền lợi tối đa lên đến <span class="fw-bold">200% STBH</span></li>
+      <li><span class="fw-bold">Bảo vệ nhiều lần </span>cho nhiều bệnh hiểm nghèo khác nhau</li>
+    </ul>
+    <h3 class="text-danger mb-0">✔ Bảo hiểm tai nạn cho bố hoặc mẹ, người trụ cột gia đình: 200tr</h3>
+    <ul class="mb-0">
+      <li>Thanh toán theo tỉ lệ % thương tật. Ví dụ: tỉ lệ thương tật do tai nạn 10%, <span class="fw-bold">nhận tiền mặt 20tr.</span>
+      </li>
+      <li>Hỗ trợ nằm viện do tai nạn: <span class="fw-bold">200k/1 ngày.</span></li>
+    </ul>
+    <h3 class="text-danger mb-0">✔ Thẻ CSSK Nội trú cao cấp dành cho 2 người bố kèm con hoặc mẹ kèm con. </h3>
+    <li>BẢO VỆ <span class="fw-bold">1tỷ/1 bệnh/1 thương tật.</span></li>
+    <li>Giường và Ăn Uống: <span class="fw-bold">3tr/ngày ( dùng Phòng Vip nhé các Mẹ&Ba)</span></li>
+    <li>Giường cho Cha Mẹ chăm sóc con: <span class="fw-bold">1tr/ngày.</span></li>
+    <li>Chi phí thăm khám, thuốc men: <span class="fw-bold">60tr/1 năm/1 bệnh/1 thương tật.</span></li>
+    <li>CP phẫu thuật <span class="fw-bold">75tr/1 ca.</span></li>
+    <li>Điều trị UT ( hóa trị, xạ trị): <span class="fw-bold">100% chi phí thực tế.</span></li>
+    <li>Bệnh bẩm sinh: <span class="fw-bold">35tr.</span></li>
+    <li>Biến chứng thai sản: <span class="fw-bold">35tr/1 biến chứng.</span></li>
+    <li>Điều trị răng do tai nạn: <span class="fw-bold">7,5tr/1 năm.</span></li>
+    <li>Bảo vệ các bệnh xương khớp, thoái hóa.</li>
+    <p class="mb-0">👉 Đóng phí 15 năm và <span class="fw-bold">bảo vệ 25 năm.</span></p>
+    <p>👉 Qũy học đường cho con sau <span class="fw-bold">15 năm: 300 triệu.</span></p>
+  </div>
+</ng-template>
+
+<ng-template #dialogTempAnphuchungthinh let-data>
+  <div class="content bg-custom ps-4 pe-2">
+    <h2 class="text-danger text-center text-uppercase">gói bh cho an phúc hưng thịnh toàn diện</h2>
+    <h3 class="text-danger mb-0">❤ SẢN PHẨM AN PHÚC HƯNG THỊNH TOÀN DIỆN.</h3>
+    <ul class="mb-0">
+      <li>Tham gia cho mọi độ tuổi.</li>
+      <li>Phí: <span class="fw-bold">10 triệu/ năm.</span></li>
+    </ul>
+    <h3 class="text-danger mb-0">✔ Nhân thọ bảo vệ sinh mệnh: từ 100tr – 150tr</h3>
+    <ul class="mb-0">
+      <li>Thẻ chăm sóc sức khoẻ nội trú cao cấp: chi trả 100% chi phí điều trị.</li>
+    </ul>
+    <h3 class="text-danger mb-0">✔ Thẻ ngoại trú: thanh toán thực tế các chi phí khám + đơn thuốc</h3>
+    <ul class="mb-0">
+      <li>Hỗ trợ viện phí: <span class="fw-bold">300->500k/ ngày nằm viện</span></li>
+    </ul>
+  </div>
+</ng-template>
+
+<ng-template #dialogTempCagiadinh let-data>
+  <div class="content bg-custom ps-4 pe-2">
+    <h2 class="text-danger text-center text-uppercase">gói bh cho cả gia đình</h2>
+    <h3 class="text-danger mb-0">❤ SẢN PHẨM AN TÂM SONG HÀNH.</h3>
+    <ul class="mb-0">
+      <li>Tham gia cho <span class="fw-bold">cả gia đình ( 3-4 thành viên).</span></li>
+      <li>Phí: <span class="fw-bold">22 triệu/ năm.</span></li>
+    </ul>
+    <h3 class="text-danger mb-0">✔ Nhân thọ bảo vệ sinh mệnh cho bố/mẹ người trụ cột trong gia đình: từ 800tr – 1tỷ</h3>
+    <ul class="mb-0">
+      <li>Bảo vệ trong trường hợp tử vong, thương tật TBVV hoặc mất 2/6 bộ phận trên cơ thể.</li>
+    </ul>
+    <h3 class="text-danger mb-0">✔ Bảo hiểm bệnh hiểm nghèo cho bố hoặc mẹ, người trụ cột gia đình: 300tr</h3>
+    <ul class="mb-0">
+      <li>Bảo vệ 88 bệnh hiểm nghèo</li>
+      <li>Tổng quyền lợi tối đa lên đến <span class="fw-bold">200% STBH</span></li>
+      <li><span class="fw-bold">Bảo vệ nhiều lần </span>cho nhiều bệnh hiểm nghèo khác nhau</li>
+    </ul>
+    <h3 class="text-danger mb-0">✔ Bảo hiểm tai nạn cho bố hoặc mẹ, người trụ cột gia đình: 200tr</h3>
+    <ul class="mb-0">
+      <li>Thanh toán theo tỉ lệ % thương tật. Ví dụ: tỉ lệ thương tật do tai nạn 10%, <span class="fw-bold">nhận tiền mặt 20tr.</span>
+      </li>
+      <li>Hỗ trợ nằm viện do tai nạn: <span class="fw-bold">200k/1 ngày.</span></li>
+    </ul>
+    <h3 class="text-danger mb-0">✔ Thẻ CSSK Nội trú cao cấp dành cho CẢ GIA ĐÌNH.</h3>
+    <li>BẢO VỆ <span class="fw-bold">1tỷ/1 bệnh/1 thương tật.</span></li>
+    <li>Giường và Ăn Uống: <span class="fw-bold">3tr/ngày ( dùng Phòng Vip nhé các Mẹ&Ba)</span></li>
+    <li>Giường cho Cha Mẹ chăm sóc con: <span class="fw-bold">1tr/ngày.</span></li>
+    <li>Chi phí thăm khám, thuốc men: <span class="fw-bold">60tr/1 năm/1 bệnh/1 thương tật.</span></li>
+    <li>CP phẫu thuật <span class="fw-bold">75tr/1 ca.</span></li>
+    <li>Điều trị UT ( hóa trị, xạ trị): <span class="fw-bold">100% chi phí thực tế.</span></li>
+    <li>Bệnh bẩm sinh: <span class="fw-bold">35tr.</span></li>
+    <li>Biến chứng thai sản: <span class="fw-bold">35tr/1 biến chứng.</span></li>
+    <li>Điều trị răng do tai nạn: <span class="fw-bold">7,5tr/1 năm.</span></li>
+    <li class="fw-bold">Bảo vệ các bệnh xương khớp, thoái hóa.</li>
+    <p class="mb-0">👉 Đóng phí 15 năm và <span class="fw-bold">bảo vệ 25 năm.</span></p>
+    <p>👉 Qũy học đường cho con sau <span class="fw-bold">15 năm: 300 triệu.</span></p>
+  </div>
+</ng-template>
